@@ -1,15 +1,16 @@
 body.background {
-    background-color: black;
-    width: 100%;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    color: rgb(11, 192, 47);
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  color: rgb(11, 192, 47);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 /* Phần đầu trang */
 .header {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     width: 100%;
     text-align: center;
     padding: 10px 0;
@@ -103,4 +104,69 @@ body.background {
     width: 100%;
   }
 }
+.artist-card h3 a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+.artist-card:hover h3 a {
+   color: rgb(0, 0, 0);               
+  background-color: #ffffff;  
+  padding: 4px 8px;            
+  border-radius: 6px; 
+}
 
+/* --- Nút đổi màu --- */
+.button_mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+.button_mode:hover {
+  transform: scale(1.1);
+  background-color: #444;
+}
+
+/* --- Chế độ tối (Dark Mode) --- */
+.dark-mode  {
+  background-color: #121212  !important;
+  color: #00ffcc;
+}
+
+.dark-mode .header {
+  background-color: #121212;
+}
+
+.dark-mode .artist-card {
+  background-color: #007744;
+}
+
+.dark-mode .artist-card h3 a {
+  color: #ffffff;
+}
+
+.dark-mode .search input[type="text"] {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .search button {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode .button_mode {
+  background-color: #ffffff;
+  color: #000;
+}
