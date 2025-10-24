@@ -1,0 +1,85 @@
+h1{
+    text-align: left;
+}
+.search   {
+    
+    margin: 30px auto;
+    margin-top: 0px;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;  
+  }
+  .search {
+    position: relative;
+    width: 300px;
+  }
+  .search input {
+    width: 100%;
+    padding: 8px 35px 8px 10px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+  }
+  .search button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+/* Container chính chứa tất cả nghệ sĩ */
+.artist-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Thẻ chứa từng nghệ sĩ */
+.artist-card {
+  width: 23%;
+  background-color: rgb(27, 141, 16);
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hiệu ứng hover */
+.artist-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Ảnh trong thẻ */
+.artist-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Tên nghệ sĩ */
+.artist-card h3 {
+  color: white;
+  margin-top: 10px;
+}
+
+/* Responsive cho tablet */
+@media (max-width: 768px) {
+  .artist-card {
+    width: 45%;
+  }
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 480px) {
+  .artist-card {
+    width: 100%;
+  }
+}
+
