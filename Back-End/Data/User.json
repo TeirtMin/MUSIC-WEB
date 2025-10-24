@@ -1,5 +1,6 @@
-{
-    "employees" [
 
-    ]
-}
+[
+    {"username": "Nguyen Minh Triet", "password": "My Thanh"},
+    {"username": "Nguyen Hoang Kha", "password": "Thuy Hang"},
+    {"username": "Phan Nguyen Huu Toan", "password": "Phuong Thao"}
+]
