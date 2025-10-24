@@ -1,0 +1,123 @@
+/* Nền toàn trang: gradient đỏ đậm → trắng đỏ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #570303, #4e2525);
+    min-height: 100vh;
+}
+
+/* Tiêu đề MCK — căn giữa trên cùng, màu trắng, font viết tay, to và đậm */
+h1 {
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: 110px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 40px 0 60px 0;
+}
+
+/* Danh sách hình — căn lề trái */
+.image-list {
+    list-style: none;
+    padding-left: 80px;
+    margin: 0;
+}
+
+/* Mỗi phần tử hình ảnh */
+.image-item {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+/* Khung ảnh */
+.image-frame {
+    border: 4px solid #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    width: 260px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Ảnh bên trong khung */
+.image-frame img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Khi hover vào ảnh – phóng to nhẹ */
+.image-frame:hover img {
+    transform: scale(1.05);
+}
+
+/* Menu xổ xuống (ẩn mặc định) */
+.dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 260px;
+    background-color: rgba(255, 255, 255, 0.97);
+    border: 2px solid #a00000;
+    border-radius: 10px;
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Hiện dropdown khi hover ảnh HOẶC hover menu */
+.image-item:hover .dropdown,
+.image-item:focus-within .dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Từng mục trong dropdown (có thể nhấp được) */
+.dropdown li {
+    padding: 10px 20px;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    color: #700000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+/* Hiệu ứng hover cho mục */
+.dropdown li a:hover {
+    background-color: #fdd;
+    color: #a00000;
+}
+
+/* Hiệu ứng mượt khi dropdown xuất hiện */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-list {
+  display: flex;              /* sắp xếp các phần tử con theo hàng ngang */
+  align-items: flex-start;    /* căn các ảnh theo hàng trên */
+  gap: 50px;                  /* khoảng cách giữa các ảnh */
+  list-style: none;           /* bỏ dấu chấm đầu dòng */
+  padding: 0;
+  margin: 0;
+}
