@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>WXRDIE</title>
+
+  <!-- Thư viện font và icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- TIÊU ĐỀ + ALBUM -->
+  <div class="top-container">
+    <h1><b>WXRDIE</b></h1>
+
+    <ul class="image-list">
+      <!-- Album THE WXRDIE -->
+      <li class="image-item">
+        <div class="image-frame">
+          <a href="#" class="album-link" data-video="JK9Aatfl9Hs">
+            <img src="pics/downloads.jpg" alt="The WXRDIE album">
+          </a>
+        </div>
+        <ul class="dropdown">
+          <li><a href="#" data-video="JK9Aatfl9Hs" data-time="0"><i class="fa-solid fa-compact-disc"></i> 11. Tim Anh Ghen</a></li>
+          <li><a href="#" data-video="JK9Aatfl9Hs" data-time="281"><i class="fa-solid fa-compact-disc"></i> 12. Get Money</a></li>
+          <li><a href="#" data-video="JK9Aatfl9Hs" data-time="443"><i class="fa-solid fa-compact-disc"></i> 08. Trở Về</a></li>
+          <li><a href="#" data-video="JK9Aatfl9Hs" data-time="637"><i class="fa-solid fa-compact-disc"></i> 23. Mời Em</a></li>
+          <li><a href="#" data-video="JK9Aatfl9Hs" data-time="842"><i class="fa-solid fa-compact-disc"></i> 19. Nu Cep</a></li>
+          <li><a href="#" data-video="JK9Aatfl9Hs" data-time="997"><i class="fa-solid fa-compact-disc"></i> 22. Lâu Đài</a></li>
+          <li><a href="#" data-video="JK9Aatfl9Hs" data-time="1213"><i class="fa-solid fa-compact-disc"></i> 21. Cả 2</a></li>
+        </ul>
+      </li>
+
+      <!-- Album SINGLE khác -->
+      <li class="image-item">
+        <div class="image-frame">
+            <img src="pics/WX.jpg" alt="WXRDIE SINGLES">
+
+        </div>
+        <ul class="dropdown">
+          <li><a href="#" data-video="ZKOKLRcoS0U"><i class="fa-solid fa-compact-disc"></i> Như Vậy Nhé</a></li>
+          <li><a href="#" data-video="sz8bmtkX1kY"><i class="fa-solid fa-compact-disc"></i> GIÀU NHẤT KHU PHÙ HOA</a></li>
+          <li><a href="#" data-video="x3WTVEfqaoA"><i class="fa-solid fa-compact-disc"></i> ĐẾN LÀ ĐÓN</a></li>
+          <li><a href="#" data-video="A455c4fKUGo"><i class="fa-solid fa-compact-disc"></i> Hình Rung Trong Tâm Trí Mình</a></li>
+          <li><a href="#" data-video="L15jwEx0Gcw"><i class="fa-solid fa-compact-disc"></i> If You Said So</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- KHUNG VIDEO -->
+  <div class="player-container">
+    <div id="music-player"></div>
+  </div>
+
+  <!-- YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    let currentVideoId = '';
+
+    // Khởi tạo trình phát YouTube
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('music-player', {
+        height: '450',
+        width: '800',
+        videoId: 'eW4AM1539-g', // video mặc định để tránh "Video không có sẵn"
+        playerVars: { autoplay: 0, controls: 1 },
+        events: {
+          onReady: () => console.log('Player đã sẵn sàng')
+        }
+      });
+    }
+
+    // Xử lý click toàn trang
+    document.addEventListener("click", function (e) {
+      const album = e.target.closest(".album-link");
+      const song = e.target.closest(".dropdown a");
+      if (!album && !song) return;
+      e.preventDefault();
+
+      if (album) {
+        const videoId = album.dataset.video;
+        if (videoId) {
+          currentVideoId = videoId;
+          player.loadVideoById({ videoId });
+          player.playVideo();
+        }
+      }
+
+      if (song) {
+        const videoId = song.dataset.video;
+        const time = parseInt(song.dataset.time) || 0;
+        if (videoId) {
+          currentVideoId = videoId;
+          player.loadVideoById({ videoId, startSeconds: time });
+          player.playVideo();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

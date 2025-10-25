@@ -1,0 +1,139 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #0e5c1f, #000);
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== KHUNG TRÊN (TÊN NGHỆ SĨ + ALBUM) ===== */
+.top-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 20px 40px;
+}
+
+/* ===== TÊN NGHỆ SĨ ===== */
+h1 {
+  font-family: 'Caprasimo', serif;
+  font-size: 80px;
+  color: white;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* ===== DANH SÁCH ALBUM ===== */
+.image-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+/* ===== TỪNG ALBUM ===== */
+.image-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== KHUNG ẢNH ===== */
+.image-frame {
+  border: 4px solid #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  width: 240px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.image-frame img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-frame:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 200, 200, 0.5);
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: absolute;
+  top: 100%; /* sát ngay dưới ảnh */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 2px solid #076323;
+  border-radius: 10px;
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0 4px 12px rgba(2, 78, 18, 0.5);
+  z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+/* ===== LUÔN HIỆN KHI HOVER ALBUM HOẶC DANH SÁCH ===== */
+.image-item:hover .dropdown,
+.image-item .dropdown:hover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(5px);
+}
+
+/* ===== ITEM TRONG LIST ===== */
+.dropdown li {
+  padding: 8px 20px;
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color: #039127;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #33001a;
+  color: #ffffff;
+  border-left: 3px solid #ff0077;
+}
+
+/* ===== KHUNG VIDEO ===== */
+.player-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#music-player {
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
