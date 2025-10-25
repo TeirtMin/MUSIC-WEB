@@ -35,15 +35,15 @@ body.background {
     border-radius: 5px;
     border: none;
     outline: none;
-    color: #fffefe;
-    background-color: #444343;
+    color: #ffffff;
+    background-color: #000000;
 }
 
 .search button {
     padding: 6px 10px;
-    font-size: 16px;
+    font-size: 13px;
     cursor: pointer;
-    background-color: #333;
+    background-color: #060606;
     color: rgb(45, 44, 44);
     border: none;
     border-radius: 5px;
@@ -116,11 +116,44 @@ body.background {
   border-radius: 6px; 
 }
 
+/* --- Nút Trang chủ --- */
+.home-btn {
+  position: absolute;   
+  top: 10px;          
+  left: 30px;          
+  background-color: #0bc02f;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  z-index: 1000;       
+}
+.header-right {
+  display: flex;           
+  align-items: center;   
+  gap: 10px;               
+}
+.home-btn:hover {
+  background-color: #099b28;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(11, 192, 47, 0.6);
+}
+
+
+
+
+
+
+
 /* --- Nút đổi màu --- */
 .button_mode {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 30px;
   background-color: #222;
   color: white;
   border: none;
@@ -152,21 +185,35 @@ body.background {
   background-color: #007744;
 }
 
-.dark-mode .artist-card h3 a {
-  color: #ffffff;
+.dark-mode .artist-card h3 a:hover {
+  color: #000000;                
+  background-color: #ffffff;     
+  transform: scale(1.05);       
+  box-shadow: 0 0 10px #00ffcc;  
 }
 
 .dark-mode .search input[type="text"] {
-  background-color: #222;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .dark-mode .search button {
-  background-color: #444;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .dark-mode .button_mode {
   background-color: #ffffff;
+  color: #ffffff;
+}
+
+/* --- Dark Mode cho nút Trang chủ --- */
+.dark-mode .home-btn {
+  background-color: #ffffff;
   color: #000;
+
+}
+
+.dark-mode .home-btn:hover {
+  background-color: #007744;
 }
