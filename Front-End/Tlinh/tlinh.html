@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tlinh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylelinh.css">
+</head>
+
+<body>
+  <!-- TIÊU ĐỀ + ALBUM -->
+  <div class="top-container">
+    <h1><b>Tlinh</b></h1>
+
+    <ul class="image-list">
+      <!-- Album TLINH (ÁI) -->
+      <li class="image-item">
+        <div class="image-frame">
+          <a href="#" class="album-link" data-video="82ZTNQNEQgE">
+            <img src="picture/download.jpg" alt="Ái Album">
+          </a>
+        </div>
+        <ul class="dropdown">
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="0"><i class="fa-solid fa-compact-disc"></i> 01. tình yêu có nghĩa là gì?</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="132"><i class="fa-solid fa-compact-disc"></i> 02. người đẹp ngủ</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="347"><i class="fa-solid fa-compact-disc"></i> 03. người điên</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="496"><i class="fa-solid fa-compact-disc"></i> 04. kho báu đánh rơi</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="694"><i class="fa-solid fa-compact-disc"></i> 05. ái (interlude)</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="762"><i class="fa-solid fa-compact-disc"></i> 06. làm lành chữa tình</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="967"><i class="fa-solid fa-compact-disc"></i> 07. thế giới thần tiên</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="1138"><i class="fa-solid fa-compact-disc"></i> 08. những đốm sáng</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="1380"><i class="fa-solid fa-compact-disc"></i> 09. nữ siêu anh hùng</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="1592"><i class="fa-solid fa-compact-disc"></i> 10. ghệ iu dấu của em ơi</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="1797"><i class="fa-solid fa-compact-disc"></i> 11. nếu lúc đó</a></li>
+          <li><a href="#" data-video="82ZTNQNEQgE" data-time="2062"><i class="fa-solid fa-compact-disc"></i> 12. kết thúc = mở đầu</a></li>
+        </ul>
+      </li>
+
+      <!-- Album TLINH (single khác) -->
+      <li class="image-item">
+        <div class="image-frame">
+          <a href="#" class="album-link" data-video="p40OWOxAeSw">
+            <img src="picture/linh.jpg" alt="TLINH Singles">
+          </a>
+        </div>
+        <ul class="dropdown">
+          <li><a href="#" data-video="p40OWOxAeSw"><i class="fa-solid fa-compact-disc"></i> Thích Quá Rùi Nà</a></li>
+          <li><a href="#" data-video="-t-ONQ6xl4k"><i class="fa-solid fa-compact-disc"></i> Vứt Zác (Vào Trong Thùng)</a></li>
+          <li><a href="#" data-video="kFJd7U7vQ3o"><i class="fa-solid fa-compact-disc"></i> Gái Độc Thân</a></li>
+          <li><a href="#" data-video="7CymvjGuY5k"><i class="fa-solid fa-compact-disc"></i> Không Cần Phải Nói Nhiều</a></li>
+          <li><a href="#" data-video="dYSDH1bgWss"><i class="fa-solid fa-compact-disc"></i> Strip em Down</a></li>
+      </li>
+    </ul>
+  </div>
+
+  <!-- KHUNG VIDEO -->
+  <div class="player-container">
+    <div id="music-player"></div>
+  </div>
+
+  <!-- YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    let currentVideoId = '';
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('music-player', {
+        height: '450',
+        width: '800',
+        playerVars: { autoplay: 0, controls: 1 },
+      });
+    }
+
+    // Click album → phát toàn video
+    document.addEventListener("click", function (e) {
+      const album = e.target.closest(".album-link");
+      if (!album) return;
+      e.preventDefault();
+      const videoId = album.dataset.video;
+      if (videoId) {
+        currentVideoId = videoId;
+        player.loadVideoById({ videoId });
+        player.playVideo();
+      }
+    });
+
+    // Click bài trong dropdown → phát đúng video (và thời điểm nếu có)
+    document.addEventListener("click", function (e) {
+      const song = e.target.closest(".dropdown a");
+      if (!song) return;
+      e.preventDefault();
+      const videoId = song.dataset.video;
+      const time = parseInt(song.dataset.time) || 0;
+      if (videoId) {
+        currentVideoId = videoId;
+        player.loadVideoById({ videoId, startSeconds: time });
+        player.playVideo();
+      }
+    });
+  </script>
+</body>
+</html>
