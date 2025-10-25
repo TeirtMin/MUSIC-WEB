@@ -11,41 +11,52 @@
             Music
         </h1>
 
-        <form class="search" action="/search">
-            <input type="text" name="q" placeholder="Tìm kiếm...">
+        <form class="search" action="/search" onsubmit="return false;">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
             <button type="submit">🔍</button>
         </form>
         <button class="home-btn" onclick="window.location.href='main.html'">🏠</button>
     </div>
 
       <!--nghe si nam o day-->
-          <div class="artist-container">
-      <div class="artist-card">
+    <div class="artist-container">
+      <div class="artist-card" >
         <a href="MCK/MCK.html"><img src="Picture/mck.jpg" alt="MCK">
         <h3>MCK</h3>
         </a>
       </div>
 
       <div class="artist-card">
-        <img src="Picture/tlinh.jpg" alt="Tlinh">
+        <a href="Tlinh/tlinh.html"><img src="Picture/tlinh.jpg" alt="Tlinh">
         <h3>Tlinh</h3>
+        </a>
       </div>
 
       <div class="artist-card">
-        <img src="Picture/wxride.jpg" alt="Wrxdie">
-        <h3>Wrxdie</h3>
+        <a href="WXRDIE/WXRDIE.html"><img src="Picture/wxride.jpg" alt="Wxrdie">
+        <h3>Wxrdie</h3>
+        </a>
       </div>
 
       <div class="artist-card">
-        <img src="Picture/obito.jpg" alt="Obito">
+        <a href="OBITOO/obito.html"><img src="Picture/obito.jpg" alt="Obito">
         <h3>Obito</h3>
+        </a>
       </div>
+
     </div>
     
     <!--nut chuyen sang toi trang nghe nhac-->
       <div>
         <button class="button_mode" onclick="toggleMode()">🌙</button>  
         <script src="main.js"></script>
+      </div>
+
+    <!--banner cuoi trang -->
+      <div class="bottom-banner">
+        <div class="banner-text">
+          <p>🎵 Chào mừng bạn đến với Spotify — nghe nhạc cùng MCK, Tlinh, Obito và Wrxdie 🎶--Album 99%--Album Ái-- Album Đánh Đổi--Album The wxride</p>
+        </div>
       </div>
   </body>
 </html>

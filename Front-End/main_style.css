@@ -118,20 +118,28 @@ body.background {
 
 /* --- Nút Trang chủ --- */
 .home-btn {
-  position: absolute;   
-  top: 10px;          
-  left: 30px;          
+  position: fixed;      
+  top: 20px;            
+  left: 20px;           
   background-color: #0bc02f;
   color: #fff;
   border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-size: 18px;
   cursor: pointer;
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  z-index: 1000;       
+  z-index: 9999;     
 }
+
+.home-btn:hover {
+  background-color: #099b28;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(11, 192, 47, 0.6);
+}       
+
 .header-right {
   display: flex;           
   align-items: center;   
@@ -142,8 +150,54 @@ body.background {
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(11, 192, 47, 0.6);
 }
+/* --- Banner chạy ở dưới --- */
+.bottom-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #0bc02f, #00ff88);
+  color: #000;
+  font-weight: bold;
+  padding: 10px 0;
+  overflow: hidden;
+  z-index: 1000;
+}
 
+.banner-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: bannerMove 20s linear infinite;
+  font-size: 18px;
+  padding-left: 100%;
+}
 
+/* Hiệu ứng chạy chữ */
+@keyframes bannerMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Hiệu ứng khi di chuột vào tên nghệ sĩ */
+.artist-card h3:hover {
+  color: #000000;
+  text-shadow: 0 0 8px #000000, 0 0 15px #000000;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+.artist-card {
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.artist-card[style*="display: none"] {
+  opacity: 0;
+  transform: scale(0.9);
+}
 
 
 
@@ -187,7 +241,7 @@ body.background {
 
 .dark-mode .artist-card h3 a:hover {
   color: #000000;                
-  background-color: #ffffff;     
+  background-color: #000000;     
   transform: scale(1.05);       
   box-shadow: 0 0 10px #00ffcc;  
 }
@@ -221,4 +275,16 @@ body.background {
 a
 {
   text-decoration: none;
+}
+/* Dark Mode cho banner */
+.dark-mode .bottom-banner {
+  background: linear-gradient(90deg, #138554, #0db955);
+  color: white;
+}
+
+.dark-mode .artist-card h3:hover {
+   color: #000000;
+  text-shadow: 0 0 8px #000000, 0 0 15px #000000;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
