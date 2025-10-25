@@ -4,103 +4,125 @@
     <meta charset="UTF-8">
     <title>MCK</title>
 
-    <!-- Liên kết đến file CSS riêng -->
+    <!-- Liên kết CSS -->
     <link rel="stylesheet" href="MCK.css">
 
     <!-- Thư viện icon Font Awesome -->
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
     <h1><b>MCK</b></h1>
 
+    <!-- Trình phát nhạc -->
+    <div class="player-container">
+        <iframe id="music-player" 
+                width="560" height="315"
+                src=""
+                title="YouTube player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Danh sách album -->
     <ul class="image-list">
+        <!-- ALBUM 1 -->
         <li class="image-item">
             <div class="image-frame">
                 <a href="https://www.youtube.com/watch?v=1jTSZWRFEB8&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8" target="_blank">
-                <img src="Pics/download.jpg" alt="MCK Album">
+                    <img src="Pics/download.jpg" alt="MCK Album">
                 </a>
             </div>
 
-            <!-- Menu con (dropdown) -->
+            <!-- MENU BÀI HÁT -->
             <ul class="dropdown">
-                <li>
-                    <a href="#">
-                        <i class="fa-solid fa-compact-disc"></i> 00
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Chìm sâu
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Suit & Tie 
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Va vào giai điệu này
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Tối nay ta đi đâu nhờ
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Chỉ một đêm nữa thôi
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Thôi em đừng đi
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> 50/50
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Cuốn cho anh một điếu nữa đi
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Show Me Love
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Tại vì sao
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Thờ er
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Ai là kẻ xấu xa
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> 99
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Anh đã ổn hơn
-                    </a>
-                </li><li>
-                    <a href="#">
-                         <i class="fa-solid fa-compact-disc"></i> Badtrip
-                    </a>
-                </li>
+                <li><a href="https://www.youtube.com/watch?v=sYSvC8tOgKE"><i class="fa-solid fa-compact-disc"></i> 00</a></li>
+                <li><a href="https://www.youtube.com/watch?v=cgCA-jP5QSY&list=RDcgCA-jP5QSY&start_radio=1&rv=cgCA-jP5QSY"><i class="fa-solid fa-compact-disc"></i> Chìm sâu</a></li>
+                <li><a href="https://www.youtube.com/watch?v=1jTSZWRFEB8&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=3"><i class="fa-solid fa-compact-disc"></i> Suit & Tie</a></li>
+                <li><a href="https://www.youtube.com/watch?v=M7UlJ0m-yy4&list=RDcgCA-jP5QSY&index=5"><i class="fa-solid fa-compact-disc"></i> Va vào giai điệu này</a></li>
+                <li><a href="https://www.youtube.com/watch?v=hyPbk_EjCKU&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=5"><i class="fa-solid fa-compact-disc"></i> Tối nay ta đi đâu nhờ</a></li>
+                <li><a href="https://www.youtube.com/watch?v=5WkwBKu1le0&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=6"><i class="fa-solid fa-compact-disc"></i> Chỉ một đêm nữa thôi</a></li>
+                <li><a href="https://www.youtube.com/watch?v=6fzH7a3XQW0&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=7"><i class="fa-solid fa-compact-disc"></i> Thôi em đừng đi</a></li>
+                <li><a href="https://www.youtube.com/watch?v=q4IHVw5obUQ&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=8"><i class="fa-solid fa-compact-disc"></i> 50/50</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Xa7GFmNRV28&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=9"><i class="fa-solid fa-compact-disc"></i> Cuốn cho anh một điếu nữa đi</a></li>
+                <li><a href="https://www.youtube.com/watch?v=IVr1d084nLg&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=10"><i class="fa-solid fa-compact-disc"></i> Show Me Love</a></li>
+                <li><a href="https://www.youtube.com/watch?v=IE02GRUWnOw&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=11"><i class="fa-solid fa-compact-disc"></i> Tại vì sao</a></li>
+                <li><a href="https://www.youtube.com/watch?v=2XNyLLyPb6c&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=12"><i class="fa-solid fa-compact-disc"></i> Thờ er</a></li>
+                <li><a href="https://www.youtube.com/watch?v=3uyno09gQLw&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=13"><i class="fa-solid fa-compact-disc"></i> Ai là kẻ xấu xa</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dz6xe0xXqYE&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=14"><i class="fa-solid fa-compact-disc"></i> Anh đã ổn hơn</a></li>
+                <li><a href="https://www.youtube.com/watch?v=LPx7ERqFYM0&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=15"><i class="fa-solid fa-compact-disc"></i> Badtrip </a></li>
+                <li><a href="https://www.youtube.com/watch?v=X-MmPuZe8t4&list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&index=16   "><i class="fa-solid fa-compact-disc"></i> 99</a></li>
             </ul>
         </li>
-        <li>
-            <li class="image-item">
+
+        <!-- ALBUM 2 -->
+        <li class="image-item">
             <div class="image-frame">
-                <img src="Pics/TD.jpg" alt="Tình đắng như ly cafe">
+                <a href="https://www.youtube.com/watch?v=ji8cjaFUIU0" target="_blank">
+                    <img src="Pics/TD.jpg" alt="Tình đắng như ly cafe">
+                </a>
+            </div>
+        </li>
+
+        <!-- ALBUM 3 -->
+        <li class="image-item">
+            <div class="image-frame">
+                <a href="https://www.youtube.com/watch?v=cKBRHaPdjbc" target="_blank">
+                    <img src="Pics/Tay.jpg" alt="Tay to">
+                </a>
             </div>
         </li>
     </ul>
+
+    <!-- Script phát nhạc -->
+    <script>
+    const player = document.getElementById("music-player");
+
+    /* === ALBUM 1: Phát toàn playlist === */
+    document.querySelector(".image-frame a[href*='list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8']")
+        .addEventListener("click", function(event) {
+            event.preventDefault();
+            const playlistUrl = "https://www.youtube.com/embed/videoseries?list=PLSaac19x1K73ilf4uHaad6-9sf3hjfcI8&autoplay=1";
+            player.src = playlistUrl;
+        });
+
+    /* === ALBUM 2: Phát 1 video (Tình đắng như ly cafe) === */
+    document.querySelector(".image-frame a[href*='ji8cjaFUIU0']")
+        .addEventListener("click", function(event) {
+            event.preventDefault(); // Không mở tab mới
+            const videoUrl = "https://www.youtube.com/embed/ji8cjaFUIU0?autoplay=1";
+            player.src = videoUrl;
+        });
+
+    /* === ALBUM 3: Phát 1 video (Tay to) === */
+    document.querySelector(".image-frame a[href*='cKBRHaPdjbc']")
+        .addEventListener("click", function(event) {
+            event.preventDefault();
+            const videoUrl = "https://www.youtube.com/embed/cKBRHaPdjbc?autoplay=1";
+            player.src = videoUrl;
+        });
+
+    /* === DANH SÁCH BÀI HÁT TRONG DROPDOWN === */
+    document.querySelectorAll(".dropdown a").forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        // Lấy link gốc trong thuộc tính href
+        const url = new URL(this.href);
+        const videoId = url.searchParams.get("v");
+
+        if (videoId) {
+            player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        } else {
+            alert("Không tìm thấy video ID!");
+        }
+    });
+});
+
+</script>
+
 </body>
 </html>

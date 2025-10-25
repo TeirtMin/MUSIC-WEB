@@ -1,13 +1,14 @@
-/* Nền toàn trang: gradient đỏ đậm → trắng đỏ */
+/* ===== NỀN TOÀN TRANG ===== */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #570303, #4e2525);
-    min-height: 100vh;
+    background-attachment: fixed;
+    color: white;
 }
 
-/* Tiêu đề MCK — căn giữa trên cùng, màu trắng, font viết tay, to và đậm */
+/* ===== TIÊU ĐỀ ===== */
 h1 {
     font-family: 'Brush Script MT', 'Segoe Script', cursive;
     font-size: 110px;
@@ -15,74 +16,99 @@ h1 {
     color: white;
     text-align: center;
     margin: 40px 0 60px 0;
+    letter-spacing: 3px;
 }
 
-/* Danh sách hình — căn lề trái */
+/* ===== KHUNG TRÌNH PHÁT NHẠC ===== */
+.player-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#music-player {
+    width: 80%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== DANH SÁCH ẢNH ===== */
 .image-list {
-    list-style: none;
-    padding-left: 80px;
+    display: flex;              
+    flex-wrap: wrap;           /* nếu nhiều ảnh thì tự xuống dòng */
+    justify-content: center;   /* căn giữa toàn bộ dãy ảnh */
+    align-items: flex-start;    
+    gap: 50px;                 
+    list-style: none;          
+    padding: 0;
     margin: 0;
 }
 
-/* Mỗi phần tử hình ảnh */
+/* ===== MỖI ẢNH ===== */
 .image-item {
     position: relative;
     display: inline-block;
     margin-bottom: 40px;
 }
 
-/* Khung ảnh */
+/* ===== KHUNG ẢNH ===== */
 .image-frame {
     border: 4px solid #ffffff;
     border-radius: 14px;
     overflow: hidden;
     width: 260px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
-/* Ảnh bên trong khung */
 .image-frame img {
     width: 100%;
     display: block;
     transition: transform 0.4s ease;
 }
 
-/* Khi hover vào ảnh – phóng to nhẹ */
-.image-frame:hover img {
+/* Khi hover vào ảnh – phóng to nhẹ và sáng khung */
+.image-frame:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 200, 200, 0.5);
 }
 
-/* Menu xổ xuống (ẩn mặc định) */
+.image-frame:hover img {
+    transform: scale(1.08);
+}
+
+/* ===== MENU DROPDOWN ===== */
 .dropdown {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
     width: 260px;
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: rgba(255, 255, 255, 0.98);
     border: 2px solid #a00000;
     border-radius: 10px;
     list-style: none;
     padding: 10px 0;
-    margin-top: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 10;
-    animation: fadeIn 0.3s ease;
 }
 
-/* Hiện dropdown khi hover ảnh HOẶC hover menu */
+/* Giúp dropdown không biến mất khi di chuột giữa ảnh và menu */
 .image-item:hover .dropdown,
 .image-item:focus-within .dropdown {
     visibility: visible;
     opacity: 1;
 }
 
-/* Từng mục trong dropdown (có thể nhấp được) */
+/* ===== CÁC MỤC TRONG DROPDOWN ===== */
 .dropdown li {
-    padding: 10px 20px;
+    padding: 8px 20px;
 }
 
 .dropdown li a {
@@ -92,16 +118,16 @@ h1 {
     align-items: center;
     gap: 10px;
     font-weight: bold;
+    font-size: 15px;
     transition: all 0.2s ease;
 }
 
-/* Hiệu ứng hover cho mục */
 .dropdown li a:hover {
     background-color: #fdd;
     color: #a00000;
 }
 
-/* Hiệu ứng mượt khi dropdown xuất hiện */
+/* ===== HIỆU ỨNG MỜ KHI HIỆN MENU ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -111,13 +137,4 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.image-list {
-  display: flex;              /* sắp xếp các phần tử con theo hàng ngang */
-  align-items: flex-start;    /* căn các ảnh theo hàng trên */
-  gap: 50px;                  /* khoảng cách giữa các ảnh */
-  list-style: none;           /* bỏ dấu chấm đầu dòng */
-  padding: 0;
-  margin: 0;
 }
