@@ -1,4 +1,4 @@
-/* ===== NỀN TOÀN TRANG ===== */
+/* ===== Nền toàn trang ===== */
 body {
     margin: 0;
     padding: 0;
@@ -8,21 +8,32 @@ body {
     color: white;
 }
 
-/* ===== TIÊU ĐỀ ===== */
+/* ===== Khung chứa Tiêu đề và Album ===== */
+.header-and-albums-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* ===== Tiêu đề ===== */
 h1 {
-    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-family: 'Caprasimo', serif;
     font-size: 110px;
     font-weight: bold;
     color: white;
-    text-align: center;
-    margin: 40px 0 60px 0;
+    text-align: left;
+    margin: 0; 
     letter-spacing: 3px;
+    flex-shrink: 0; 
 }
 
-/* ===== KHUNG TRÌNH PHÁT NHẠC ===== */
+/* ===== Khung video ===== */
 .player-container {
-    text-align: center;
-    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 #music-player {
@@ -34,26 +45,29 @@ h1 {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-/* ===== DANH SÁCH ẢNH ===== */
+/* ===== Danh sách album ===== */
 .image-list {
-    display: flex;              
-    flex-wrap: wrap;           /* nếu nhiều ảnh thì tự xuống dòng */
-    justify-content: center;   /* căn giữa toàn bộ dãy ảnh */
+    display: flex;                
+    flex-wrap: nowrap; 
+    justify-content: center;   
     align-items: flex-start;    
     gap: 50px;                 
     list-style: none;          
     padding: 0;
-    margin: 0;
+    margin: 0; 
+    flex-grow: 1; 
 }
 
-/* ===== MỖI ẢNH ===== */
+/* ===== Mỗi ảnh ===== */
 .image-item {
     position: relative;
-    display: inline-block;
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0; 
 }
 
-/* ===== KHUNG ẢNH ===== */
+/* ===== Khung ảnh ===== */
 .image-frame {
     border: 4px solid #ffffff;
     border-radius: 14px;
@@ -70,7 +84,6 @@ h1 {
     transition: transform 0.4s ease;
 }
 
-/* Khi hover vào ảnh – phóng to nhẹ và sáng khung */
 .image-frame:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(255, 200, 200, 0.5);
@@ -80,7 +93,7 @@ h1 {
     transform: scale(1.08);
 }
 
-/* ===== MENU DROPDOWN ===== */
+/* ===== Dropdown ===== */
 .dropdown {
     visibility: hidden;
     opacity: 0;
@@ -96,17 +109,16 @@ h1 {
     padding: 10px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10;
+    z-index: 99; 
+    pointer-events: auto;
 }
 
-/* Giúp dropdown không biến mất khi di chuột giữa ảnh và menu */
 .image-item:hover .dropdown,
 .image-item:focus-within .dropdown {
     visibility: visible;
     opacity: 1;
 }
 
-/* ===== CÁC MỤC TRONG DROPDOWN ===== */
 .dropdown li {
     padding: 8px 20px;
 }
@@ -119,22 +131,9 @@ h1 {
     gap: 10px;
     font-weight: bold;
     font-size: 15px;
-    transition: all 0.2s ease;
 }
 
 .dropdown li a:hover {
     background-color: #fdd;
     color: #a00000;
-}
-
-/* ===== HIỆU ỨNG MỜ KHI HIỆN MENU ===== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
