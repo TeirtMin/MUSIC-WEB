@@ -99,5 +99,19 @@
     });
   </script>
   <button class="home-btn" onclick="window.location.href='../main.html'">🏠</button>
+  <script>
+  // 🔁 Tự động phát video nếu có ?video=ID
+  const urlParams = new URLSearchParams(window.location.search);
+  const videoId = urlParams.get('video');
+  if (videoId) {
+    const checkExist = setInterval(() => {
+      if (typeof player !== "undefined" && player.loadVideoById) {
+        player.loadVideoById(videoId);
+        player.playVideo();
+        clearInterval(checkExist);
+      }
+    }, 500);
+  }
+</script>
 </body>
 </html>
